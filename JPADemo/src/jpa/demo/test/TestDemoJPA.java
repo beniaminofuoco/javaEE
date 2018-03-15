@@ -22,18 +22,6 @@ public class TestDemoJPA {
 		}
 	}
 
-	private static void creaUtenti(Controller contr) {
-		Utente ute1 = new Utente();
-		ute1.setUsername("pippo");
-		ute1.setEmail("pippo@iol.it");
-		Utente ute2 = new Utente();
-		ute2.setUsername("pluto");
-		ute2.setEmail("pluto@iol.it");
-
-		contr.aggiunteUtente(ute1);
-		contr.aggiunteUtente(ute2);
-	}
-	
 	private static void creaUtentiConLibro(Controller contr) {
 		Utente ute1 = new Utente();
 		ute1.setUsername("pippo");
