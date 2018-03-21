@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+ 
+ <h:head>
+	<title>Test JSF Page</title>	
+ </h:head>
+ <h:body>
+ 	<p>#{test.numero}</p>
+ 	<p>#{test.numero lt 5}</p>
+ 	<p>#{test.numero eq 5}</p>
+ 	<p>#{test.numero gt 5}</p>
+ 	
+ 	<h:panelGroup class="panel" rendered="#{test.numero gt 5}">
+ 		Panello con Renderer
+ 	</h:panelGroup>
+ 	
+	<ul>
+		<ui:repeat value="#{test.lista}" var="item" varStatus="loop">
+			<li>#{loop.index} - #{item}</li>
+		</ui:repeat>
+	</ul>
+	<p>#{test.map['chiave']}</p>
+ </h:body>
+</html>
