@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>JPA Fetch Type</title>
+</h:head>
+<h:body>
+	<h:form id="myForm">
+	
+		<h:commandButton value="Carica Utente" action="#{sessionBean.caricaUtente()}"/>
+		<br/>
+	
+		<h:panelGroup rendered="#{sessionBean.utente ne null}">
+			<hr/>
+			<p>Username: #{sessionBean.utente.username}</p>
+			
+			<h:commandButton value="Carica Libri" action="#{sessionBean.setShowLibri(true) }"/>
+			<br/>
+			
+			<h:panelGroup rendered="#{sessionBean.showLibri}">
+				<p>Libri di #{sessionBean.utente.username}</p>
+				<ul>
+					<ui:repeat var="libro" value="#{sessionBean.utente.libri}">
+						<li>#{libro.autore} - #{libro.titolo}</li>
+					</ui:repeat>
+				</ul>
+			</h:panelGroup>
+		</h:panelGroup>
+	</h:form>
+</h:body>
+</html>
