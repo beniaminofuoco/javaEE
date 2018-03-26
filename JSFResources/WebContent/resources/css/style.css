@@ -1,0 +1,16 @@
+@font-face{
+	font-family: 'AwensomeFont';
+	src: url("#{resource['font:AwesomeBirds.ttf']}");
+}
+
+body {
+	color: green;
+	font-family: 'AwensomeFont';
+	font-size: 40px;
+}
+
+.div-cat{
+	background-image: url("#{resource['img:logo.jpg']}");
+	width: 800px;
+	height: 700px;
+}
